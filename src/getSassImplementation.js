@@ -25,12 +25,6 @@ function getSassImplementation(implementation) {
   const [implementationName, version] = infoParts;
 
   if (implementationName === 'dart-sass') {
-    if (!semver.satisfies(version, '^1.3.0')) {
-      throw new Error(
-        `Dart Sass version ${version} is incompatible with ^1.3.0.`
-      );
-    }
-
     return resolvedImplementation;
   } else if (implementationName === 'node-sass') {
     if (!semver.satisfies(version, '^4.0.0')) {
